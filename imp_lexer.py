@@ -55,6 +55,7 @@ token_exprs = [
     (r'\bpass\b',                  "PASS"),
     (r'\bwith\b',                  "WITH"),
     (r'\,',                    "COMMA"),
+    (r'\w+[.]\w+',                    "KARTITIK"),
     (r'\.',                    "TITIK"),
     (r'\'',                    "PETIKSATU"),
     (r'\"',                    "PETIKDUA"),

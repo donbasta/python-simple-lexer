@@ -1,1 +1,2 @@
- time_end = time.perf_counter()
+if rule_product[0].islower:
+    a = b

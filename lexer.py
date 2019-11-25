@@ -18,6 +18,7 @@ def lex(characters, token_exprs):
                 break
         if not match:
             sys.stderr.write('Illegal character: %s\\n' % characters[pos])
+            print(characters[pos])
             sys.exit(1)
         else:
             pos = match.end(0)
