@@ -1,1 +1,1 @@
-IN ID 
+ID EQ ID TITIK ID LP RP 

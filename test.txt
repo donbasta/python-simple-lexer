@@ -1,1 +1,1 @@
-input
+ time_end = time.perf_counter()
