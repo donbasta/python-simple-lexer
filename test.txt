@@ -1,2 +1,2 @@
-if rule_product[0].islower:
+if len(rule) == 1:
     a = b
