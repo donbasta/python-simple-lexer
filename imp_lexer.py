@@ -1,18 +1,14 @@
 import lexer
 
-RESERVED = 'RESERVED'
-INT      = 'INT'
-ID       = 'ID'
-
 
 token_exprs = [
     (r'[ \t]+',              None),
     (r'#[^\n]*',               None),
     (r'\n[ \t]*\'\'\'[^\']*\'\'\'',       None),
     (r'\n[ \t]*\"\"\"[^\"]*\"\"\"',       None),
-    (r'[\+\-]?[0-9]*\.[0-9]+',            INT),
-    (r'[\+\-]?[1-9][0-9]+',     INT),
-    (r'[\+\-]?[0-9]',     INT),
+    (r'[\+\-]?[0-9]*\.[0-9]+',            "INT"),
+    (r'[\+\-]?[1-9][0-9]+',     "INT"),
+    (r'[\+\-]?[0-9]',     "INT"),
     (r'\n',              "NEWLINE"),
     (r'\=(?!\=)',                    "EQ"),
     (r'\==',                  "ISEQUAL"),
@@ -79,9 +75,7 @@ token_exprs = [
     (r'\"\"\"[^\"]*\"\"\"',       "MULTILINE"),
     (r'\"[^\"\'\n]*\"',                    "STRING"),
     (r'\'[^\"\'\n]*\'',                    "STRING"),
-    (r'[A-Za-z_][A-Za-z0-9_]*', ID),
-    #(r'\"',                    "PETIKDUA"),
-    #(r'\'',                    "PETIKSATU"),
+    (r'[A-Za-z_][A-Za-z0-9_]*', "ID"),
 ]
 
 def imp_lex(characters):
