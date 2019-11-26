@@ -3,7 +3,7 @@ import argparse
 import grammar_converter
 import tokenizer
 
-class Node:
+class Tree:
 
     def __init__(self, symbol, left, right=None):
         self.symbol = symbol
@@ -50,7 +50,7 @@ class Parser:
         for i, word in enumerate(self.input):
             for rule in self.grammar:
                 if f"'{word}'" == rule[1]:
-                    self.parse_table[0][i].append(Node(rule[0], word))
+                    self.parse_table[0][i].append(Tree(rule[0], word))
         for words_to_consider in range(2, length + 1):
             for starting_cell in range(0, length - words_to_consider + 1):
                 for left_size in range(1, words_to_consider):
@@ -64,16 +64,19 @@ class Parser:
                         if left_nodes:
                             right_nodes = [n for n in right_cell if n.symbol == rule[2]]
                             self.parse_table[words_to_consider - 1][starting_cell].extend(
-                                [Node(rule[0], left, right) for left in left_nodes for right in right_nodes]
+                                [Tree(rule[0], left, right) for left in left_nodes for right in right_nodes]
                             )
 
     def verdict(self, output=True):
-        start_symbol = self.grammar[0][0] #Simbol pertama di grammar CNF
-        final_nodes = [n for n in self.parse_table[-1][0] if n.symbol == start_symbol]
-        if final_nodes:
-            print("ACCEPTED")
+        start = self.grammar[0][0] #Simbol pertama di grammar CNF
+        if len(self.input) > 0:
+            final_nodes = [n for n in self.parse_table[-1][0] if n.symbol == start]
+            if final_nodes:
+                print("ACCEPTED")
+            else:
+                print("SYNTAX ERROR")
         else:
-            print("SYNTAX ERROR")
+            print("ACCEPTED")
 
 
 if __name__ == '__main__':

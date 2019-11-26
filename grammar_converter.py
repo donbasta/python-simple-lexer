@@ -1,6 +1,6 @@
 RULE_DICT = {}
 
-def prin_tgrammar(grammar):
+def print_grammar(grammar):
 	for rule in grammar:
 		print(rule[0], " -> ", end='')
 		for i in rule[1:]:
