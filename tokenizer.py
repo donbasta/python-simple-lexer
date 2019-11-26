@@ -18,3 +18,7 @@ def create_token(sentence):
         file2.write(str(token[1])+" ")
 
     file2.close()
+
+if __name__ == "__main__":
+
+    create_token('test.txt')
