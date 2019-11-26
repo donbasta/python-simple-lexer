@@ -72,8 +72,10 @@ class Parser:
         if len(self.input) > 0:
             final_nodes = [n for n in self.parse_table[-1][0] if n.symbol == start]
             if final_nodes:
+                print()
                 print("ACCEPTED")
             else:
+                print()
                 print("SYNTAX ERROR")
         else:
             print("ACCEPTED")

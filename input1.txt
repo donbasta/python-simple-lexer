@@ -1,0 +1,6 @@
+if len(rule_product) == 0:
+        print( EPSILON_RULE_KEY )
+    elif len(rule_product) == 1:
+            print( UNARY_RULE_KEY )
+    elif False:
+        print("Ga bakal ke print")

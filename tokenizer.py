@@ -1,6 +1,6 @@
 from imp_lexer import *
 
-#Tokenizer
+#Menuliskan hasil Tokenizer sebuah file ke dalam file line untuk diteruskan ke CYK_Parser
 
 def create_token(sentence):
 
@@ -15,7 +15,7 @@ def create_token(sentence):
     file2 = open('tokenized_test.txt', 'w')
 
     for token in tokenized:
-        file2.write(str(token[1])+" ")
+        file2.write(str(token)+" ")
 
     file2.close()
 
