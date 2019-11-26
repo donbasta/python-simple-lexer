@@ -1,3 +1,7 @@
 
-a = 'kyaa'
-
+        if ascii == PIPE_ASCII:
+                f_out.write('I')
+            elif ascii in ACCEPTED_ASCII_LIST:
+                f_out.write(c)
+            else:
+                f_out.write(' ')

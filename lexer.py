@@ -20,6 +20,7 @@ def lex(characters, token_exprs):
                     tokens.append(token)
                 break
         if not match:
+            print("SYNTAX ERROR")
             print("Illegal character %s at line %d" % (characters[pos], line))
             sys.exit(1)
         else:
